@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { CardComponent, HeaderComponent } from "./comps";
+import "./css/style.css";
+import headerPhoto from "../src/images/marvel.jpg";
+import card1Photo from "../src/images/bat-man.jpg";
+import card2Photo from "../src/images/iron-man.jpg";
+import card3Photo from "../src/images/spider-man.jpg";
+import { headerDesc, cardDesc, title } from "./services/tools";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <HeaderComponent url={headerPhoto} title={title} desc={headerDesc} />
+      <aside>
+        <ul class="list-style">
+          <CardComponent url={card1Photo} title={title} desc={cardDesc} />
+          <CardComponent url={card2Photo} title={title} desc={cardDesc} />
+          <CardComponent url={card3Photo} title={title} desc={cardDesc} />
+        </ul>
+      </aside>
     </div>
   );
 }
